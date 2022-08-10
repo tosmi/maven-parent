@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>at.stderr</groupId>
+  <artifactId>maven-parent</artifactId>
+  <version>1</version>
+  <packaging>pom</packaging>
+  <name>${project.artifactId}</name>
+  <description>Parent POM for maven-based projects in at.stderr.</description>
+  <url>https://stderr.at/</url>
+  <inceptionYear>2022</inceptionYear>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <maven.snapshot.repository>https://s01.oss.sonatype.org/content/repositories/snapshots</maven.snapshot.repository>
+    <maven.release.repository>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</maven.release.repository>
+    <maven.source.version>2.2.1</maven.source.version>
+    <maven.javadoc.version>2.9.1</maven.javadoc.version>
+    <maven.gpg.version>1.5</maven.gpg.version>
+  </properties>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>${maven.snapshot.repository}</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>${maven.release.repository}</url>
+    </repository>
+  </distributionManagement>
+
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>${maven.source.version}</version>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <goals>
+                <goal>jar-no-fork</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>${maven.javadoc.version}</version>
+          <executions>
+            <execution>
+              <id>attach-javadocs</id>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>${maven.gpg.version}</version>
+          <executions>
+            <execution>
+              <id>sign-artifacts</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>sign</goal>
+              </goals>
+              <configuration>
+                <keyname>${gpg.keyname}</keyname>
+                <passphraseServerId>${gpg.keyname}</passphraseServerId>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </build>
+
+    <licenses>
+      <license>
+        <name>Apache Software License, Version 2.0</name>
+        <url>https://github.com/${github.organization}/${github.repository}/blob/${github.default.branch}/LICENSE</url>
+        <distribution>repro</distribution>
+        <comments/>
+      </license>
+  </licenses>
+
+</project>
