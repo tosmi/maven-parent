@@ -7,12 +7,15 @@
   <artifactId>maven-parent</artifactId>
   <version>1</version>
   <packaging>pom</packaging>
-  <name>${project.artifactId}</name>
+   <name>${project.groupId}:${project.artifactId}</name>
   <description>Parent POM for maven-based projects in at.stderr.</description>
-  <url>https://stderr.at/</url>
+  <url>https://github.com/tosmi/maven-parent</url>
   <inceptionYear>2022</inceptionYear>
 
   <properties>
+    <github.organization>tosmi</github.organization>
+    <github.repository>maven-parent</github.repository>
+    <github.default.branch>main</github.default.branch>
     <java.version>1.8</java.version>
     <maven.snapshot.repository>https://s01.oss.sonatype.org/content/repositories/snapshots</maven.snapshot.repository>
     <maven.release.repository>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</maven.release.repository>
@@ -83,13 +86,36 @@
       </plugins>
     </build>
 
+  <developers>
+    <developer>
+      <id>tosmi</id>
+      <name>Toni Schmidbauer</name>
+      <email>toni.removethis@stderr.at</email>
+      <organization>stderr.at</organization>
+      <organizationUrl>https://stderr.at</organizationUrl>
+      <roles>
+        <role>admin</role>
+        <role>developer</role>
+        <role>architect</role>
+      </roles>
+      <timezone>+1</timezone>
+      <properties/>
+    </developer>
+  </developers>
+
     <licenses>
       <license>
-        <name>Apache Software License, Version 2.0</name>
+        <name>GNU General Public License v3.0</name>
         <url>https://github.com/${github.organization}/${github.repository}/blob/${github.default.branch}/LICENSE</url>
-        <distribution>repro</distribution>
+        <distribution>repo</distribution>
         <comments/>
       </license>
   </licenses>
+
+  <scm>
+    <connection>scm:git:git://github.com/${github.organization}/${github.repository}</connection>
+    <developerConnection>scm:git:ssh://github.com:${github.organization}/${github.repository}.git</developerConnection>
+    <url>http://github.com/${github.organization}/${github.repository}demo/tree/${github.default.branch}</url>
+   </scm>
 
 </project>
