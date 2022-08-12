@@ -39,6 +39,7 @@
     <maven.surefire.version>3.0.0-M7</maven.surefire.version>
     <maven.jar.version>3.2.2</maven.jar.version>
     <maven.deploy.version>3.0.0</maven.deploy.version>
+    <maven.exec.version>3.1.0</maven.exec.version>
 
     <junit.juptier.version>5.9.0</junit.juptier.version>
   </properties>
@@ -182,6 +183,12 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
           <version>${maven.versions.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>${maven.exec.version}</version>
         </plugin>
 
       </plugins>
