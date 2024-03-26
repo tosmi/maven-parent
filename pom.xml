@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>at.stderr</groupId>
   <artifactId>maven-parent</artifactId>
-  <version>2.3.0</version>
+  <version>2.3.1</version>
   <packaging>pom</packaging>
    <name>${project.groupId}:${project.artifactId}</name>
   <description>Parent POM for maven-based projects in at.stderr.</description>
@@ -24,33 +24,123 @@
 
     <maven.snapshot.repository>https://s01.oss.sonatype.org/content/repositories/snapshots</maven.snapshot.repository>
     <maven.release.repository>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</maven.release.repository>
-    <maven.source.version>3.2.1</maven.source.version>
-    <maven.javadoc.version>3.4.0</maven.javadoc.version>
-    <maven.gpg.version>3.0.1</maven.gpg.version>
-    <maven.clean.version>3.2.0</maven.clean.version>
+    <maven.source.version>3.3.0</maven.source.version>
+    <maven.javadoc.version>3.6.3</maven.javadoc.version>
+    <maven.gpg.version>3.2.2</maven.gpg.version>
+    <maven.clean.version>3.3.2</maven.clean.version>
     <maven.archetype.version>3.2.1</maven.archetype.version>
-    <maven.resource.version>3.3.0</maven.resource.version>
-    <maven.install.version>3.0.1</maven.install.version>
-    <maven.deploy.version>3.0.0</maven.deploy.version>
-    <maven.enforcer.version>3.1.0</maven.enforcer.version>
-    <maven.site.version>3.12.1</maven.site.version>
-    <maven.versions.version>2.11.0</maven.versions.version>
-    <maven.compiler.version>3.10.1</maven.compiler.version>
-    <maven.surefire.version>3.0.0-M7</maven.surefire.version>
-    <maven.jar.version>3.2.2</maven.jar.version>
-    <maven.deploy.version>3.0.0</maven.deploy.version>
-    <maven.exec.version>3.1.0</maven.exec.version>
+    <maven.resources.version>3.3.1</maven.resources.version>
+    <maven.install.version>3.1.1</maven.install.version>
+    <maven.enforcer.version>3.4.1</maven.enforcer.version>
+    <maven.site.version>4.0.0-M13</maven.site.version>
+    <maven.compiler.version>3.13.0</maven.compiler.version>
+    <maven.surefire.version>3.2.5</maven.surefire.version>
+    <maven.jar.version>3.3.0</maven.jar.version>
+    <maven.deploy.version>3.1.1</maven.deploy.version>
 
-    <junit.juptier.version>5.9.0</junit.juptier.version>
+    <codehaus.versions.version>2.16.2</codehaus.versions.version>
+    <codehaus.exec.version>3.2.0</codehaus.exec.version>
+
+    <junit.juptier.version>5.10.2</junit.juptier.version>
   </properties>
 
   <dependencies>
-      <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter</artifactId>
-        <version>${junit.juptier.version}</version>
-        <scope>test</scope>
-      </dependency>
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-source-plugin</artifactId>
+      <version>${maven.source.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-javadoc-plugin</artifactId>
+      <version>${maven.javadoc.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-gpg-plugin</artifactId>
+      <version>${maven.gpg.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-clean-plugin</artifactId>
+      <version>${maven.clean.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-archetype-plugin</artifactId>
+      <version>${maven.archetype.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-resources-plugin</artifactId>
+      <version>${maven.resources.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-install-plugin</artifactId>
+      <version>${maven.install.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-deploy-plugin</artifactId>
+      <version>${maven.deploy.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-enforcer-plugin</artifactId>
+      <version>${maven.enforcer.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-site-plugin</artifactId>
+      <version>${maven.site.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>${maven.compiler.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>${maven.surefire.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>${maven.jar.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>versions-maven-plugin</artifactId>
+      <version>${codehaus.versions.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>exec-maven-plugin</artifactId>
+      <version>${codehaus.exec.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.juptier.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <distributionManagement>
@@ -64,135 +154,151 @@
     </repository>
   </distributionManagement>
 
-    <build>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-source-plugin</artifactId>
-          <version>${maven.source.version}</version>
-          <executions>
-            <execution>
-              <id>attach-sources</id>
-              <goals>
-                <goal>jar-no-fork</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>${maven.source.version}</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>${maven.javadoc.version}</version>
-          <executions>
-            <execution>
-              <id>attach-javadocs</id>
-              <goals>
-                <goal>jar</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${maven.javadoc.version}</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-gpg-plugin</artifactId>
-          <version>${maven.gpg.version}</version>
-          <executions>
-            <execution>
-              <id>sign-artifacts</id>
-              <phase>verify</phase>
-              <goals>
-                <goal>sign</goal>
-              </goals>
-              <configuration>
-                <keyname>${gpg.keyname}</keyname>
-                <passphraseServerId>${gpg.keyname}</passphraseServerId>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>${maven.gpg.version}</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+            <configuration>
+              <keyname>${gpg.keyname}</keyname>
+              <passphraseServerId>${gpg.keyname}</passphraseServerId>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>${maven.clean.version}</version>
-        </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>${maven.clean.version}</version>
+      </plugin>
 
-        <plugin>
-          <artifactId>maven-archetype-plugin</artifactId>
-          <version>${maven.archetype.version}</version>
-        </plugin>
+      <plugin>
+        <artifactId>maven-archetype-plugin</artifactId>
+        <version>${maven.archetype.version}</version>
+      </plugin>
 
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>${maven.resource.version}</version>
-        </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>${maven.resources.version}</version>
+      </plugin>
 
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>${maven.install.version}</version>
-        </plugin>
+      <plugin>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>${maven.install.version}</version>
+      </plugin>
 
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>${maven.deploy.version}</version>
-        </plugin>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>${maven.deploy.version}</version>
+      </plugin>
 
-        <plugin>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>${maven.site.version}</version>
-        </plugin>
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>${maven.site.version}</version>
+      </plugin>
 
 
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>${maven.compiler.version}</version>
-        </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.version}</version>
+      </plugin>
 
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>${maven.surefire.version}</version>
-        </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven.surefire.version}</version>
+      </plugin>
 
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>${maven.jar.version}</version>
-        </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>${maven.jar.version}</version>
+      </plugin>
 
-        <plugin>
-          <artifactId>maven-enforcer-plugin</artifactId>
-          <version>${maven.enforcer.version}</version>
-          <executions>
-            <execution>
-              <id>enforce-maven</id>
-              <goals>
-                <goal>enforce</goal>
-              </goals>
-              <configuration>
-                <rules>
-                  <requireMavenVersion>
-                    <version>3.6</version>
-                  </requireMavenVersion>
-                </rules>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>${maven.enforcer.version}</version>
+        <executions>
+          <execution>
+            <id>enforce-maven</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>3.6</version>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>versions-maven-plugin</artifactId>
-          <version>${maven.versions.version}</version>
-        </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>${codehaus.versions.version}</version>
+	<configuration>
+	  <ruleSet>
+	    <rules>
+	      <rule>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-site-plugin</artifactId>
+		<ignoreVersions>
+		  <ignoreVersion>
+		    <type>regex</type>
+		    <version>.+-M\d</version>
+		  </ignoreVersion>
+		</ignoreVersions>
+	      </rule>
+	    </rules>
+	  </ruleSet>
+	</configuration>
+      </plugin>
 
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>exec-maven-plugin</artifactId>
-          <version>${maven.exec.version}</version>
-        </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>${codehaus.exec.version}</version>
+      </plugin>
 
-      </plugins>
-    </build>
+    </plugins>
+  </build>
 
   <developers>
     <developer>
